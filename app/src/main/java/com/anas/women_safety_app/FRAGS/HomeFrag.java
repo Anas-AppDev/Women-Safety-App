@@ -124,6 +124,8 @@ public class HomeFrag extends Fragment implements SensorEventListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        Toast.makeText(getContext(),FirebaseAuth.getInstance().getCurrentUser().getUid(), Toast.LENGTH_SHORT).show();
+
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         sos = view.findViewById(R.id.sos);
@@ -270,7 +272,7 @@ public class HomeFrag extends Fragment implements SensorEventListener {
     }
 
     public void sos4call() {
-        String Phone = "7060997570";
+        String Phone = "7060997580";
         Intent i = new Intent(Intent.ACTION_CALL);
         i.setData(Uri.parse("tel:" + Phone));
         startActivity(i);
